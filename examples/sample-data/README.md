@@ -7,4 +7,7 @@ This sanitized fixture demonstrates the supported folder layout:
 - `invalid-count` should be skipped because it contains more than two files.
 - `missing-name` should be skipped because the filename value is missing.
 
+The metadata uses the `files[0].fileName` string field to specify the intended
+filename.
+
 Run the utility against the parent folder, not an individual child folder.

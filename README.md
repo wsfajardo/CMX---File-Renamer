@@ -24,6 +24,6 @@ java -jar file-renamer-1.0.0.jar <target-folder>
 
 The target folder must contain direct child folders. Each child folder must
 contain exactly one JSON file and one downloaded file. The utility reads
-`files[0].fileName[0]` from the JSON metadata and renames the downloaded file.
+`files[0].fileName` from the JSON metadata and renames the downloaded file.
 
 Logs are written to a `log` folder beside the packaged JAR.

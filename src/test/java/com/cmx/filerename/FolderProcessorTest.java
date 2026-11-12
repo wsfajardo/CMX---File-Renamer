@@ -20,7 +20,7 @@ class FolderProcessorTest {
         Path folder = Files.createDirectory(tempDirectory.resolve("item-001"));
         Path downloaded = Files.createFile(folder.resolve("download.bin"));
         Files.writeString(folder.resolve("metadata.json"),
-                "{\"files\":[{\"fileName\":[\"final.pdf\"]}]}" );
+                "{\"files\":[{\"fileName\":\"final.pdf\"}]}" );
 
         try (LogWriter log = LogWriter.create(tempDirectory)) {
             assertEquals(FolderProcessor.Result.RENAMED,
@@ -49,7 +49,7 @@ class FolderProcessorTest {
         Path folder = Files.createDirectory(tempDirectory.resolve("item-003"));
         Path downloaded = Files.createFile(folder.resolve("final.pdf"));
         Files.writeString(folder.resolve("metadata.json"),
-                "{\"files\":[{\"fileName\":[\"final.pdf\"]}]}" );
+                "{\"files\":[{\"fileName\":\"final.pdf\"}]}" );
 
         try (LogWriter log = LogWriter.create(tempDirectory)) {
             assertEquals(FolderProcessor.Result.ALREADY_CORRECT,
@@ -76,7 +76,7 @@ class FolderProcessorTest {
         Path folder = Files.createDirectory(tempDirectory.resolve("item-005"));
         Files.createFile(folder.resolve("download.bin"));
         Files.writeString(folder.resolve("metadata.json"),
-                "{\"files\":[{\"fileName\":[\"..\\\\outside.pdf\"]}]}" );
+                "{\"files\":[{\"fileName\":\"..\\\\outside.pdf\"}]}" );
 
         try (LogWriter log = LogWriter.create(tempDirectory)) {
             assertEquals(FolderProcessor.Result.SKIPPED,
@@ -90,7 +90,7 @@ class FolderProcessorTest {
         Files.createFile(folder.resolve("download.bin"));
         Files.createDirectory(folder.resolve("final.pdf"));
         Files.writeString(folder.resolve("metadata.json"),
-                "{\"files\":[{\"fileName\":[\"final.pdf\"]}]}" );
+                "{\"files\":[{\"fileName\":\"final.pdf\"}]}" );
 
         try (LogWriter log = LogWriter.create(tempDirectory)) {
             assertEquals(FolderProcessor.Result.SKIPPED,

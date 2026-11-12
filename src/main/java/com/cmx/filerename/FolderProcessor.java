@@ -94,9 +94,9 @@ public final class FolderProcessor {
         if (root == null || !root.isObject()) {
             throw new IllegalArgumentException("JSON root must be an object");
         }
-        JsonNode filename = root.path("files").path(0).path("fileName").path(0);
+        JsonNode filename = root.path("files").path(0).path("fileName");
         if (!filename.isTextual() || filename.asText().isBlank()) {
-            throw new IllegalArgumentException("files[0].fileName[0] is missing or empty");
+            throw new IllegalArgumentException("files[0].fileName is missing or empty");
         }
         return filename.asText();
     }

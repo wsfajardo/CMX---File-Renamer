@@ -23,7 +23,7 @@ class FileRenamerApplicationTest {
         Path item = Files.createDirectory(target.resolve("item-001"));
         Files.createFile(item.resolve("download.bin"));
         Files.writeString(item.resolve("metadata.json"),
-                "{\"files\":[{\"fileName\":[\"final.pdf\"]}]}" );
+                "{\"files\":[{\"fileName\":\"final.pdf\"}]}" );
 
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         int exitCode = new FileRenamerApplication(new ObjectMapper(), tempDirectory)
