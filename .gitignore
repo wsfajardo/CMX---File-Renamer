@@ -1,0 +1,11 @@
+# Local planning and operating records
+.agents/
+
+# Temporary review artifacts
+tmp/
+
+# Runtime logs
+log/
+
+# Maven build outputs
+target/
